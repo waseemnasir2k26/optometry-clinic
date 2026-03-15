@@ -1,80 +1,101 @@
-import { Eye, Glasses, CircleDot, Scan, Baby, Sun } from 'lucide-react'
+import { Eye, Glasses, CircleDot, Scan, Baby, Sun, ArrowRight } from 'lucide-react'
 
 const services = [
   {
     icon: Eye,
     title: 'Comprehensive Eye Exams',
-    description: 'Thorough vision testing and eye health evaluation using advanced diagnostic equipment.',
-    highlight: true,
+    description: 'Thorough vision testing and eye health evaluation using advanced diagnostic technology.',
+    color: 'from-primary-500 to-primary-700',
+    bg: 'bg-primary-50',
+    iconColor: 'text-primary-600',
   },
   {
     icon: Glasses,
-    title: 'Prescription Eyewear',
-    description: 'Curated selection of designer frames and precision-crafted lenses for every style and budget.',
+    title: 'Designer Eyewear',
+    description: 'Curated selection of premium frames and precision-crafted lenses for every style.',
+    color: 'from-amber-500 to-orange-600',
+    bg: 'bg-amber-50',
+    iconColor: 'text-amber-600',
   },
   {
     icon: CircleDot,
     title: 'Contact Lens Fitting',
-    description: 'Expert fitting for all types including daily, toric, multifocal, and specialty contacts.',
+    description: 'Expert fitting for daily, toric, multifocal, and specialty contact lenses.',
+    color: 'from-blue-500 to-indigo-600',
+    bg: 'bg-blue-50',
+    iconColor: 'text-blue-600',
   },
   {
     icon: Scan,
     title: 'Retinal Imaging',
-    description: 'State-of-the-art digital imaging for early detection of glaucoma, macular degeneration, and more.',
+    description: 'Digital imaging for early detection of glaucoma, macular degeneration, and more.',
+    color: 'from-violet-500 to-purple-600',
+    bg: 'bg-violet-50',
+    iconColor: 'text-violet-600',
   },
   {
     icon: Baby,
     title: 'Pediatric Eye Care',
-    description: "Gentle, thorough eye exams designed specifically for children's visual development needs.",
+    description: "Gentle, thorough exams designed for children's visual development and learning needs.",
+    color: 'from-rose-500 to-pink-600',
+    bg: 'bg-rose-50',
+    iconColor: 'text-rose-600',
   },
   {
     icon: Sun,
     title: 'Dry Eye Treatment',
-    description: 'Advanced therapies to diagnose and treat chronic dry eye for lasting comfort and relief.',
+    description: 'Advanced therapies to diagnose and treat chronic dry eye for lasting relief.',
+    color: 'from-teal-500 to-emerald-600',
+    bg: 'bg-teal-50',
+    iconColor: 'text-teal-600',
   },
 ]
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 lg:py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" className="py-24 lg:py-32 bg-white relative">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-primary-600 font-semibold text-sm tracking-widest uppercase mb-3">What We Offer</p>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Complete Vision Care Services
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary-50 border border-primary-100 rounded-full text-sm font-semibold text-primary-600 mb-5">
+            <div className="w-1.5 h-1.5 bg-primary-500 rounded-full" />
+            Our Services
+          </div>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-gray-900 tracking-tight mb-5">
+            Complete Vision Care
+            <br />
+            <span className="text-primary-600">Under One Roof</span>
           </h2>
-          <p className="text-gray-600 text-lg">
-            From routine checkups to advanced diagnostics, we provide everything your eyes need under one roof.
+          <p className="text-gray-500 text-lg leading-relaxed">
+            From routine checkups to advanced diagnostics, everything your eyes need with the care they deserve.
           </p>
         </div>
 
         {/* Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {services.map((service) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+          {services.map((service, idx) => (
             <div
               key={service.title}
-              className={`group relative p-8 rounded-2xl border transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${
-                service.highlight
-                  ? 'bg-primary-600 border-primary-600 text-white shadow-lg shadow-primary-600/20'
-                  : 'bg-white border-gray-100 hover:border-primary-200'
-              }`}
+              className="group relative bg-white rounded-2xl border border-gray-100 p-7 sm:p-8 hover:border-gray-200 transition-all duration-500 hover:shadow-xl hover:shadow-gray-200/50 hover:-translate-y-1 cursor-default"
             >
-              <div
-                className={`w-14 h-14 rounded-xl flex items-center justify-center mb-5 ${
-                  service.highlight
-                    ? 'bg-white/20'
-                    : 'bg-primary-50 group-hover:bg-primary-100 transition-colors'
-                }`}
-              >
-                <service.icon className={`w-7 h-7 ${service.highlight ? 'text-white' : 'text-primary-600'}`} />
+              {/* Gradient accent line at top */}
+              <div className={`absolute top-0 left-8 right-8 h-[3px] bg-gradient-to-r ${service.color} rounded-b-full opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+
+              <div className={`w-14 h-14 ${service.bg} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                <service.icon className={`w-7 h-7 ${service.iconColor}`} strokeWidth={1.8} />
               </div>
-              <h3 className={`text-xl font-semibold mb-3 ${service.highlight ? 'text-white' : 'text-gray-900'}`}>
+
+              <h3 className="text-lg font-bold text-gray-900 mb-2.5 group-hover:text-primary-700 transition-colors">
                 {service.title}
               </h3>
-              <p className={`leading-relaxed ${service.highlight ? 'text-primary-100' : 'text-gray-600'}`}>
+              <p className="text-gray-500 leading-relaxed text-[0.938rem]">
                 {service.description}
               </p>
+
+              <div className="mt-5 flex items-center gap-1.5 text-sm font-semibold text-primary-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Learn more
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+              </div>
             </div>
           ))}
         </div>

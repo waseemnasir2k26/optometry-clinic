@@ -1,0 +1,4 @@
+- Public single-page React 19 + Vite 7 + Tailwind 4 marketing site for an optometry practice ("ClearView Optometry"): nine section components; the booking form is front-end only with no backend in the repo.
+- October 2026 review: tree and history re-read; last functional commit is 2026-03-15 (Vite pinned to v7 for Tailwind/Vercel compatibility). All 7 external README links (stock Vite template text) returned HTTP 200. Package version bumped 0.1.0 to 0.2.0 as release metadata only; no component, style or build config changed.
+- A Work with SkynetLabs section was appended to the README.
+- Known gaps: the README is still the stock "React + Vite" template text; no LICENSE, tests, CI or stated live URL.

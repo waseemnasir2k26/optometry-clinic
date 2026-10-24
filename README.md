@@ -1,28 +1,21 @@
-# React + Vite
+# optometry-clinic
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Demo website for a single-location optometry practice: hero with same-day booking prompt, services, insurance banner, booking form, testimonials and contact section. Content is placeholder for a fictional practice (phone numbers and email are dummy values).
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+React 19, Vite, Tailwind CSS 4, lucide-react icons.
 
-## Status
+## Run it
 
-Last reviewed: October 2026 · release v2026.10
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+## Limits
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- The booking form is front-end only; it is not wired to a backend or calendar.
+- No live deployment is linked from this repo.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-
-## Work with SkynetLabs
-
-Built by [Waseem Nasir](https://www.skynetjoe.com/?utm_source=github&utm_medium=readme&utm_campaign=optometry-clinic) at SkynetLabs — n8n + AI automation for small businesses.
-
-- Hire on Fiverr: https://www.fiverr.com/agencies/skynetjoellc
-- Hire on Upwork: https://www.upwork.com/freelancers/muhammadwaseemnasir
-- Book a free call: https://calendly.com/skynetlabs/schedule-a-free-consultation
+Demo built by SkynetLabs.
